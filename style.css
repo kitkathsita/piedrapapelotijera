@@ -1,0 +1,84 @@
+body{
+  display: flex;
+  vertical-align: middle;
+  background-color: violet;
+  top: 50%;
+  left: 50%;
+  height: 100vh;
+}
+
+.content{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+}
+
+.titles{
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+  margin: 30px;
+  font-size: 60px;
+}
+
+.rules{
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  font-family: monospace;
+  padding: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center;
+}
+
+.principal{
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  gap: 40px;
+  margin: 30px;
+}
+
+.foto{
+  width: 280px;
+  height: auto;
+}
+
+.but{
+  border-radius: 50%;
+  width: fit-content;
+  background-color: violet;
+  text-decoration: none;
+  border-color: white;
+  border-width: 5px;
+  cursor: pointer;
+}
+
+.count{
+  display: flex;
+  font-family: monospace;
+  font-size: 40px;
+  justify-content: space-around;
+  width: 40%;
+  margin: 30px;
+}
+
+.you{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.computer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
