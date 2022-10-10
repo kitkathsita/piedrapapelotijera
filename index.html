@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
   <title>RPS</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,18 +11,19 @@
     <h1 class="titles">ROCK, PAPER, SCISSORS... but cute</h1>
     <div class="rules">This is the classic rock, paper, scissors game but you're playing against the computer. The best of 5 is the winner, GOOD LUCK!</div>
     <div class="principal">
-      <button class="but"><img class='foto' src="images/roca.png" alt=""></button>
-      <button class="but"><img class='foto' src="images/papel.png" alt=""></button>
-      <button class="but"><img class='foto' src="images/tijera.png" alt=""></button>
+      <button class="but rock"><img class='foto' src="images/roca.png" alt=""></button>
+      <button class="but paper"><img class='foto' src="images/papel.png" alt=""></button>
+      <button class="but scissors"><img class='foto' src="images/tijera.png" alt=""></button>
     </div>
+    <div class="round"></div>
     <div class="count">
       <div class="you">
         <div class="player">You</div>
-        <div class="counter">0</div>
+        <div class="counter y">0</div>
       </div>
       <div class="computer">
         <div class="player">Computer</div>
-        <div class="counter">0</div>
+        <div class="counter c">0</div>
       </div>
     </div>
   </div>

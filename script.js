@@ -1,4 +1,4 @@
-console.log("hola")
+//console.log("hola")
 
 
 function random(max){
@@ -22,67 +22,92 @@ function getComputerChoice(a){
 
 let win = 0
 let lose = 0
+let plays = 1
 
-function playRound(computer, person){
-  let playerselection = person.toLowerCase()
-  let computerselection = computer
+function playRound(){
+  let playerselection = this.classList[1]
+  let computerselection = getComputerChoice(random(3))
 
-  console.log(playerselection)
-  console.log(computerselection)
+  if (plays===5){
+    if(win===lose){
+      round.classList.add('big')
+      round.textContent = "IT'S A TIE"
+    }
+    else if(win<lose){
+      round.classList.add('big')
+      round.textContent = 'YOU LOSE'
+    }
+    else{
+      round.classList.add('big')
+      round.textContent = 'YOU WON'
+    }
+    return
+  }
 
   if (playerselection===computerselection){
-    console.log("It's a tie")
+    round.textContent = "It's a tie"
   }
   else{
     switch(computerselection){
       case "rock":
         if (playerselection==="paper"){
-          console.log("You won :)")
           win++ 
+          counter[0].textContent = win
+          round.textContent = "You won this round!"
         }
         else {
-          console.log("You lose :(")
           lose++
+          counter[1].textContent = lose
+          round.textContent = "The computer won this round"
         }
         break
       case "scissors":
         if (playerselection==="paper"){
-          console.log("You lose :(")
           lose++
+          counter[1].textContent = lose
+          round.textContent = "The computer won this round"
         }
         else{
-          console.log("You won :)")
           win++
+          counter[0].textContent = win
+          round.textContent = "You won this round!"
         }
         break
       case "paper":
         if (playerselection==="scissors"){
-          console.log("You won :)")
           win++
+          counter[0].textContent = win
+          round.textContent = "You won this round!"
         }
         else{
-          console.log("You lose :)")
           lose++
+          counter[1].textContent = lose
+          round.textContent = "The computer won this round"
         }
         break
     }
   } 
+  plays++
 }
 
-function game(){
-  for (let i = 0; i < 5; i++){
-    let playerselection = prompt()
-    playRound(getComputerChoice(random(3)), playerselection)
-  }
-  if  (win===lose){
-    console.log("IT'S A TIE")
-  }
-  else if (win < lose){
-    console.log("the computer won")
-  }
-  else{
-    console.log("You won")
-  }
+const select = document.querySelectorAll('.but')
+const counter = document.querySelectorAll('.counter')
+const round = document.querySelector('.round')
+  
+
+for (let i = 0; i < 5; i++){
+  select.forEach(but => but.addEventListener('click', playRound))
+}
+if  (win===lose){
+  console.log("IT'S A TIE")
+}
+else if (win < lose){
+  console.log("the computer won")
+}
+else{
+  console.log("You won")
 }
 
-// game()
+select.forEach(but => but.addEventListener('click', playRound))
+//select.forEach(but => but.addEventListener('click', game))
+
